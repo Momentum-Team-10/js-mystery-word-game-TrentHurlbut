@@ -151,7 +151,7 @@ let words = [
     'stroke',
 ];
 
-let buttons = document.querySelectorAll('.button');
+let buttons = document.getElementsByTagName('button');
 let graves = document.getElementById('graves');
 let word = document.getElementById('word');
 let skull = document.querySelectorAll('.skull');
@@ -182,7 +182,7 @@ for (let button of buttons) {
             }
         } else {
             button.classList.add('skull');
-            skull.appendChild(document.createTextNode('&#x1F480;'));
+            button.appendChild(document.createTextNode('&#x1F480'));
             graves.appendChild(document.createTextNode(button.innerText));
         }
     });

@@ -62,7 +62,25 @@ button:active {
     color: #ffffff;
     font-family: Arial;
     font-size: 17px;
-    padding: 16px 31px;
+    padding: 20px;
     text-decoration: none;
     text-shadow: 0px 1px 0px #ffffff;
+    margin: 2px;
+    width: 20px;
+}
+
+.skull:hover {
+    background-color: transparent;
+    border-radius: 28px;
+    border: 1px solid #ffffff;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 15px;
+    padding: 20px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #ffffff;
+    margin: 2px;
+    width: 20px;
 }
