@@ -154,10 +154,15 @@ let words = [
 let button = document.querySelectorAll('.button');
 let graves = document.getElementById('graves');
 let word = document.getElementById('word');
+let randomWord = words[Math.floor(Math.random() * words.length)];
 
-word.addEventListener('load', () => {
-    let randomWord = words[Math.floor(Math.random() * words.length)];
-    for (let i = 0; i < randomWord.length; i++) {
-        word.append(document.createElement('li'));
-    }
+let wordArray = randomWord.split('');
+let blanksArray = [];
+
+for (let spot of wordArray) {
+    blanksArray.push('_');
+}
+
+window.addEventListener('load', () => {
+    word.appendChild(document.createTextNode(blanksArray.join(' ')));
 });

@@ -18,6 +18,8 @@ p {
 
 #word {
     height: 100px;
+    margin: auto;
+    font-size: 85px;
 }
 
 button {
@@ -45,7 +47,8 @@ button:active {
     top: 1px;
 }
 
-li {
+#blanks {
     width: 20px;
-    border-bottom: black;
+    height: 20px;
+    border: black;
 }
