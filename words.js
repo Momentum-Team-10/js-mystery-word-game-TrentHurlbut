@@ -151,9 +151,10 @@ let words = [
     'stroke',
 ];
 
-let button = document.querySelectorAll('.button');
+let buttons = document.querySelectorAll('.button');
 let graves = document.getElementById('graves');
 let word = document.getElementById('word');
+let skull = document.querySelectorAll('.skull');
 let randomWord = words[Math.floor(Math.random() * words.length)];
 
 let wordArray = randomWord.split('');
@@ -166,3 +167,23 @@ for (let spot of wordArray) {
 window.addEventListener('load', () => {
     word.appendChild(document.createTextNode(blanksArray.join(' ')));
 });
+
+for (let button of buttons) {
+    button.addEventListener('click', () => {
+        let letter = button.innerText;
+        if (wordArray.includes(letter)) {
+            for (let character of wordArray) {
+                if (wordArray[character] === letter) {
+                    blanksArray[character] = letter;
+                    word.appendChild(
+                        document.createTextNode(blanksArray.join(''))
+                    );
+                }
+            }
+        } else {
+            button.classList.add('skull');
+            skull.appendChild(document.createTextNode('&#x1F480;'));
+            graves.appendChild(document.createTextNode(button.innerText));
+        }
+    });
+}
