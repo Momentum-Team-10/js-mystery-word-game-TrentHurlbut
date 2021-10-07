@@ -150,3 +150,14 @@ let words = [
     'book',
     'stroke',
 ];
+
+let button = document.querySelectorAll('.button');
+let graves = document.getElementById('graves');
+let word = document.getElementById('word');
+
+word.addEventListener('load', () => {
+    let randomWord = words[Math.floor(Math.random() * words.length)];
+    for (let i = 0; i < randomWord.length; i++) {
+        word.append(document.createElement('li'));
+    }
+});

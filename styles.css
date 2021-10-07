@@ -11,12 +11,12 @@ p {
     margin: auto;
 }
 
-.graves {
+#graves {
     display: flex;
     height: 100px;
 }
 
-.word {
+#word {
     height: 100px;
 }
 
@@ -43,4 +43,9 @@ button:hover {
 button:active {
     position: relative;
     top: 1px;
+}
+
+li {
+    width: 20px;
+    border-bottom: black;
 }
