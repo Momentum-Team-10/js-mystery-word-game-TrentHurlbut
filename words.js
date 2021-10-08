@@ -197,7 +197,7 @@ for (let button of buttons) {
         }
         if (!blanksArray.includes('_')) {
             win.play();
-            confirm("You've discovered the dancing Skeleton's Mystery Word!");
+            confirm("You've discovered The Dancing Skeleton's Mystery Word!");
             window.location.reload();
         }
     });
