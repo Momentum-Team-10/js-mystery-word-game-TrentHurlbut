@@ -176,9 +176,7 @@ for (let button of buttons) {
                 console.log(character);
                 if (wordArray[character] === letter) {
                     blanksArray[character] = letter;
-                    word.replaceWith(
-                        document.createTextNode(blanksArray.join(''))
-                    );
+                    word.innerText = blanksArray.join('');
                 }
             }
         } else {
