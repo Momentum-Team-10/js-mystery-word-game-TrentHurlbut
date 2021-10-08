@@ -61,15 +61,15 @@ button:active {
 .skull {
     background: transparent;
     border-radius: 6px;
-    border: 1px solid #ffffff;
+    border: 0px solid transparent;
     display: inline-block;
     cursor: pointer;
-    color: #ffffff;
+    color: transparent;
     font-family: Arial;
     font-size: 17px;
     padding: 20px;
     text-decoration: none;
-    text-shadow: 0px 1px 0px #ffffff;
+    text-shadow: 0px 1px 0px transparent;
     margin: 2px;
     width: 20px;
 }
@@ -77,15 +77,15 @@ button:active {
 .skull:hover {
     background: transparent;
     border-radius: 6px;
-    border: 1px solid #ffffff;
+    border: 0px solid transparent;
     display: inline-block;
     cursor: pointer;
-    color: #ffffff;
+    color: transparent;
     font-family: Arial;
     font-size: 15px;
     padding: 20px;
     text-decoration: none;
-    text-shadow: 0px 1px 0px #ffffff;
+    text-shadow: 0px 1px 0px transparent;
     margin: 2px;
     width: 40px;
 }

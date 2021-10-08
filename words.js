@@ -177,7 +177,7 @@ for (let button of buttons) {
                 console.log(character);
                 if (wordArray[character] === letter) {
                     blanksArray[character] = letter;
-                    word.innerText = blanksArray.join('');
+                    word.innerText = blanksArray.join(' ');
                 }
             }
         } else {
@@ -186,13 +186,12 @@ for (let button of buttons) {
             button.disabled = true;
             counter++;
             console.log(counter);
-            if (counter === 7) {
+            if (counter === randomWord.length * 2) {
                 confirm('Sorry! The Dancing Skeleton has baffled you!');
                 window.location.reload();
                 // confirm.addEventListener('click', () => window.location.reload())
             }
         }
-
         if (!blanksArray.includes('_')) {
             confirm("You've discovered the dancing Skeleton's Mystery Word!");
             window.location.reload();
