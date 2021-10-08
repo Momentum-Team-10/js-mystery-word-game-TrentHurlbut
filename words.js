@@ -161,6 +161,9 @@ let counter = 0;
 let wordArray = randomWord.split('');
 let blanksArray = [];
 
+let win = new Audio('HORNCele_Party horn 4 (ID 1556)_BSB.mp3');
+let loss = new Audio('VOXCry_One day baby crying (ID 0873)_BSB.mp3');
+
 for (let spot of wordArray) {
     blanksArray.push('_');
 }
@@ -186,16 +189,16 @@ for (let button of buttons) {
             button.disabled = true;
             counter++;
             console.log(counter);
-            if (counter === randomWord.length * 2) {
+            if (counter === randomWord.length * 2 || counter === 12) {
+                loss.play();
                 confirm('Sorry! The Dancing Skeleton has baffled you!');
                 window.location.reload();
-                // confirm.addEventListener('click', () => window.location.reload())
             }
         }
         if (!blanksArray.includes('_')) {
+            win.play();
             confirm("You've discovered the dancing Skeleton's Mystery Word!");
             window.location.reload();
-            // confirm.addEventListener('click', () => window.location.reload())
         }
     });
 }
