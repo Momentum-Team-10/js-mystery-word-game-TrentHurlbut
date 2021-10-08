@@ -12,8 +12,11 @@ p {
 }
 
 #graves {
+    justify-content: center;
     display: flex;
     height: 100px;
+    margin: auto;
+    font-size: 70px;
 }
 
 #word {
@@ -54,8 +57,8 @@ button:active {
 }
 
 .skull {
-    background-color: transparent;
-    border-radius: 28px;
+    background: transparent;
+    border-radius: 6px;
     border: 1px solid #ffffff;
     display: inline-block;
     cursor: pointer;
@@ -70,8 +73,7 @@ button:active {
 }
 
 .skull:hover {
-    background-color: transparent;
-    border-radius: 28px;
+    border-radius: 6px;
     border: 1px solid #ffffff;
     display: inline-block;
     cursor: pointer;
@@ -82,5 +84,5 @@ button:active {
     text-decoration: none;
     text-shadow: 0px 1px 0px #ffffff;
     margin: 2px;
-    width: 20px;
+    width: 40px;
 }

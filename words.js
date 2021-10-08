@@ -172,18 +172,19 @@ for (let button of buttons) {
     button.addEventListener('click', () => {
         let letter = button.innerText;
         if (wordArray.includes(letter)) {
-            for (let character of wordArray) {
+            for (let character in wordArray) {
+                console.log(character);
                 if (wordArray[character] === letter) {
                     blanksArray[character] = letter;
-                    word.appendChild(
+                    word.replaceWith(
                         document.createTextNode(blanksArray.join(''))
                     );
                 }
             }
         } else {
             button.classList.add('skull');
-            button.appendChild(document.createTextNode('&#x1F480'));
             graves.appendChild(document.createTextNode(button.innerText));
+            button.disabled = true;
         }
     });
 }
