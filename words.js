@@ -153,7 +153,7 @@ let words = [
 
 let buttons = document.getElementsByTagName('button');
 let graves = document.getElementById('graves');
-let word = document.getElementById('word');
+let wordDisplay = document.getElementById('word-display');
 let skull = document.querySelectorAll('.skull');
 let randomWord = words[Math.floor(Math.random() * words.length)];
 console.log('The word is: ', randomWord);
@@ -171,7 +171,7 @@ for (let spot of wordArray) {
 }
 
 window.addEventListener('load', () => {
-    word.appendChild(document.createTextNode(blanksArray.join(' ')));
+    wordDisplay.appendChild(document.createTextNode(blanksArray.join(' ')));
 });
 
 for (let button of buttons) {
@@ -181,8 +181,24 @@ for (let button of buttons) {
         if (wordArray.includes(letter)) {
             for (let character in wordArray) {
                 if (wordArray[character] === letter) {
+                    console.log(
+                        'This is the value of blanks array before it is updated: ',
+                        blanksArray
+                    );
+                    console.log(
+                        'BEFORE: This is the value of the inner text before it is updated: ',
+                        wordDisplay.innerText
+                    );
                     blanksArray[character] = letter;
-                    word.innerText = blanksArray.join(' ');
+                    wordDisplay.innerText = blanksArray.join(' ');
+                    console.log(
+                        'AFTER This is the value of blanks array after it is updated: ',
+                        blanksArray
+                    );
+                    console.log(
+                        'This is the value of the inner text after it is updated: ',
+                        wordDisplay.innerText
+                    );
                 }
             }
         } else {
@@ -197,10 +213,18 @@ for (let button of buttons) {
                 window.location.reload();
             }
         }
+
         if (!blanksArray.includes('_')) {
+            console.log(
+                'This is the text value after the wincon check: ',
+                wordDisplay.innerText
+            );
             win.play();
-            confirm("You've discovered The Dancing Skeleton's Mystery Word!");
-            window.location.reload();
+            console.log('Win message would have been shown here');
+            // confirm("You've discovered The Dancing Skeleton's Mystery Word!");
+
+            //This window reload starts a new game.
+            // window.location.reload();
         }
     });
 }

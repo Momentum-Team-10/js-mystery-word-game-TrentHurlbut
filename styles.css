@@ -19,7 +19,7 @@ p {
     font-size: 70px;
 }
 
-#word {
+#word-display {
     justify-content: center;
     display: flex;
     height: 100px;
