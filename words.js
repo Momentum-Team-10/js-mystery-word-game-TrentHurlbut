@@ -156,6 +156,8 @@ let graves = document.getElementById('graves');
 let word = document.getElementById('word');
 let skull = document.querySelectorAll('.skull');
 let randomWord = words[Math.floor(Math.random() * words.length)];
+console.log('The word is: ', randomWord);
+
 let counter = 0;
 
 let wordArray = randomWord.split('');
@@ -175,9 +177,9 @@ window.addEventListener('load', () => {
 for (let button of buttons) {
     button.addEventListener('click', () => {
         let letter = button.innerText;
+        console.log('User has selected: ', letter);
         if (wordArray.includes(letter)) {
             for (let character in wordArray) {
-                console.log(character);
                 if (wordArray[character] === letter) {
                     blanksArray[character] = letter;
                     word.innerText = blanksArray.join(' ');
