@@ -150,7 +150,7 @@ let words = [
     'book',
     'stroke',
 ];
-
+let winMessageHasPlayed = false;
 let buttons = document.getElementsByTagName('button');
 let graves = document.getElementById('graves');
 let wordDisplay = document.getElementById('word-display');
@@ -174,10 +174,19 @@ window.addEventListener('load', () => {
     wordDisplay.appendChild(document.createTextNode(blanksArray.join(' ')));
 });
 
+const winGame = () => {
+    console.log('Win message would have been shown here');
+    winMessageHasPlayed = true;
+    // confirm("You've discovered The Dancing Skeleton's Mystery Word!");
+
+    //This window reload starts a new game.
+    // window.location.reload();
+};
 for (let button of buttons) {
     button.addEventListener('click', () => {
         let letter = button.innerText;
         console.log('User has selected: ', letter);
+
         if (wordArray.includes(letter)) {
             for (let character in wordArray) {
                 if (wordArray[character] === letter) {
@@ -214,17 +223,22 @@ for (let button of buttons) {
             }
         }
 
-        if (!blanksArray.includes('_')) {
+        if (!wordDisplay.innerText.split(' ').includes('_')) {
             console.log(
                 'This is the text value after the wincon check: ',
-                wordDisplay.innerText
+                wordDisplay.innerText.split(' ')
             );
-            win.play();
-            console.log('Win message would have been shown here');
-            // confirm("You've discovered The Dancing Skeleton's Mystery Word!");
 
+            // User won the game
+            console.log('Value of winMess : ', winMessageHasPlayed);
+            setTimeout(winGame(), 6000);
+        }
+
+        if (winMessageHasPlayed === true) {
+            win.play();
+            confirm("You've discovered The Dancing Skeleton's Mystery Word!");
             //This window reload starts a new game.
-            // window.location.reload();
+            window.location.reload();
         }
     });
 }
