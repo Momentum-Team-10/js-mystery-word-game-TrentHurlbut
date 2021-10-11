@@ -150,6 +150,8 @@ let words = [
     'book',
     'stroke',
 ];
+
+//Variables used to grab various parts of the page.
 let winMessageHasPlayed = false;
 let buttons = document.getElementsByTagName('button');
 let graves = document.getElementById('graves');
@@ -160,6 +162,7 @@ console.log('The word is: ', randomWord);
 
 let counter = 0;
 
+//wordArray is the 'key' the game checks and blanksArray is the array that displays in the word section of the page.
 let wordArray = randomWord.split('');
 let blanksArray = [];
 
@@ -182,11 +185,16 @@ const winGame = () => {
     //This window reload starts a new game.
     // window.location.reload();
 };
+
+//A rule that applies to each button
 for (let button of buttons) {
+    //Happens on click
     button.addEventListener('click', () => {
+        //Instantiation of the inner text of buttons as a variable (just their letters) and a console log for debugging.
         let letter = button.innerText;
         console.log('User has selected: ', letter);
 
+        //If the letter of the button pressed matches a letter or letters in the secret word, update the display.
         if (wordArray.includes(letter)) {
             for (let character in wordArray) {
                 if (wordArray[character] === letter) {
@@ -210,6 +218,8 @@ for (let button of buttons) {
                     );
                 }
             }
+
+            //If it doesn't, add the letter to the graveyard and blank-out the button
         } else {
             button.classList.add('skull');
             graves.appendChild(document.createTextNode(button.innerText));
@@ -223,6 +233,7 @@ for (let button of buttons) {
             }
         }
 
+        //All of this code down here is an attempt to correctly display the word in its entirety after the wincon has been reached.
         if (!wordDisplay.innerText.split(' ').includes('_')) {
             console.log(
                 'This is the text value after the wincon check: ',
